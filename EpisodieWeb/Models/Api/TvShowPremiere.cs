@@ -8,32 +8,32 @@ namespace EpisodieWeb.Models.Api
     public class TvShowPremiere
     {
 
-        private String tvShowApiId { get; set; }
+        public String tvShowApiId { get; set; }
 
-        private String imdbId { get; set; }
+        public String imdbId { get; set; }
 
-        private String name { get; set; }
+        public String name { get; set; }
 
-        private String officialSite { get; set; }
+        public String officialSite { get; set; }
 
-        private String network { get; set; }
+        public String network { get; set; }
 
-        private String genre { get; set; }
+        public String genre { get; set; }
 
-        private long runtime { get; set; }
+        public long runtime { get; set; }
 
-        private int fullRuntime { get; set; }
+        public int fullRuntime { get; set; }
 
-        private int episodeOrder { get; set; }
+        public int episodeOrder { get; set; }
 
-        private String status { get; set; }
+        public String status { get; set; }
 
-        private String premiere { get; set; }
+        public String premiere { get; set; }
 
-        private String summary { get; set; }
+        public String summary { get; set; }
 
-        private String imageMedium { get; set; }
+        public String imageMedium { get; set; }
 
-        private String imageOriginal { get; set; }
+        public String imageOriginal { get; set; }
     }
 }

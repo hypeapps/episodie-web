@@ -8,5 +8,6 @@ namespace EpisodieWeb.Models.api
     public class TvShowExtendedEntity
     {
         public String name { get; set; }
+        public String imageOriginal { get; set; }
     }
 }
