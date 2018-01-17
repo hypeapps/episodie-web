@@ -39,8 +39,11 @@ namespace EpisodieWeb.Controllers
 
             TvShowRepository dataSource = new TvShowDataSource("EpisodieAndroidClient", "123#261261&p8p6992");
             var entity = dataSource.getTvShowById(id);
-            System.Diagnostics.Debug.WriteLine("HELLO2");
-            System.Diagnostics.Debug.WriteLine(entity.imageOriginal);
+
+         //   System.Diagnostics.Debug.WriteLine("HELLO2");
+         //   System.Diagnostics.Debug.WriteLine(entity.imageOriginal);
+
+            ViewData["entity"] = entity;
             return View();
 
         }

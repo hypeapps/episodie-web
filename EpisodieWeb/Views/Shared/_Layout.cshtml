@@ -11,18 +11,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <style type="text/css">
-        body { background: black !important; }
-        h1 { color:cornsilk !important;}
+        body { background: black !important;min-height:100%; }
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            height: 20px;
+        }
+        h1, p, h3 { color:cornsilk !important;}
+       
+
 
     </style>
 </head>
 <body>
-
+    <nav class="navbar navbar-light bg-faded">
+       <a href="@Url.Action("index","home")" <h2 class="navbar-brand mb-0" style="color:goldenrod">EPISODIE-WEB</h2></a>
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <br />
-        <hr />
-        <footer>
+        <footer class="footer">
             <p>&copy; 2017 - EpisodieWeb</p>
         </footer>
     </div>
