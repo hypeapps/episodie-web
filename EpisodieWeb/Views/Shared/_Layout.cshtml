@@ -16,10 +16,8 @@
             position: relative;
             min-height: 100%;
         }
-        .footer {
-            position: absolute;
-            bottom: 0;
-            height: 20px;
+        footer {
+            height: 10px !important;
         }
         h1, p, h3 { color:cornsilk !important;}
        
@@ -34,8 +32,13 @@
     <div class="container body-content">
         @RenderBody()
         <br />
-        <footer class="footer">
-            <p>&copy; 2017 - EpisodieWeb</p>
+        <br />
+        <footer class="navbar navbar-default navbar-fixed-bottom">
+            <h5 style="display:inline-block;color:black !important;padding-top:5px;">&copy; 2017 - EpisodieWeb </h5>
+            <a href="@Url.Action("search", "home")">
+                <img src="https://cdn-images-1.medium.com/max/1600/1*DTZk1_3ih9F4rGkayz7wxg.png" width="50px;" height="50px;"
+                     style="float:right" />
+            </a>
         </footer>
     </div>
 

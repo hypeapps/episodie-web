@@ -24,6 +24,10 @@
     .row {
     margin-top: 15px;
     }
+    .inner-box {
+    width:175px;
+    }
+
 </style>
 
 
@@ -32,7 +36,7 @@
     <div class="col">
         @for (var i = 0; i < mostPopular.totalElements; i++)
         {
-            <div>
+            <div class="inner-box">
                 <a href="@Url.Action("detail", "home", new { id=mostPopular.content[i].tvShowApiId }, null)">
                     <img src="@mostPopular.content[i].imageOriginal" width="130" height="200" /> 
                 </a>
@@ -46,7 +50,7 @@
     <div class="col">
         @for (var i = 0; i < topList.totalElements; i++)
         {
-        <div>
+        <div class="inner-box">
             <a href="@Url.Action("detail", "home", new { id=topList.content[i].tvShowApiId }, null)">
                 <img src="@topList.content[i].imageOriginal" width="130" height="200" />
             </a>
@@ -60,9 +64,9 @@
     <div class="col">
         @for (var i = 0; i < lastReleases.totalElements; i++)
         {
-        <div>
+        <div class="inner-box">
             <a href="@Url.Action("detail", "home", new { id=lastReleases.content[i].tvShowApiId }, null)">
-                <img src="@lastReleases.content[i].imageOriginal" width="130" height="200" />
+                <img src="@lastReleases.content[i].imageOriginal" width="130" height="200"/>
                 </a>
         </div>
         }
@@ -76,13 +80,16 @@
 <script type="text/javascript" src="http://cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js"></script>
 <script type="text/javascript">
     $('.col').slick({
-        centerMode: true,
+        centerMode: false,
         centerPadding: '60px',
         slidesToShow: 5,
-        dots: false, // dolne kropki 
+        slidesToScroll: 5,
+        autoplay: false,
+        draggable: true,
+        swipe: true,
+        swipeToSlide: true,
+        variableWidth: true,
         infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
         arrows: true
     });
 

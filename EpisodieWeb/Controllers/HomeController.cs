@@ -14,20 +14,14 @@ namespace EpisodieWeb.Controllers
     {
         public IActionResult Index()
         {
-            /* Obecna data minus pół roku  */
+            /* Obecna data minus jeden miesiac  */
             DateTime dateTime = DateTime.UtcNow.Date;
-            var firstRelease = dateTime.AddMonths(-6);
+            var firstRelease = dateTime.AddMonths(-1);
 
             TvShowRepository dataSource = new TvShowDataSource("EpisodieAndroidClient", "123#261261&p8p6992");
             var mostPopular = dataSource.getMostPopular(0, 95);
             var topList = dataSource.getTopList(0, 116);
-            var lastReleases = dataSource.getTvShowPremieres(0, 100, firstRelease.ToString("yyyy-MM-dd")); /* Premiery do pół roku wstecz */
-
-            /*
-            System.Diagnostics.Debug.WriteLine("HELLO");
-            System.Diagnostics.Debug.WriteLine(mostPopular.totalElements);
-            System.Diagnostics.Debug.WriteLine(topList.totalElements);
-            */
+            var lastReleases = dataSource.getTvShowPremieres(0, 100, firstRelease.ToString("yyyy-MM-dd")); /* Premiery do miesiac  wstecz */
 
             ViewData["mostPopular"] = mostPopular;
             ViewData["topList"] = topList;
@@ -40,10 +34,21 @@ namespace EpisodieWeb.Controllers
             TvShowRepository dataSource = new TvShowDataSource("EpisodieAndroidClient", "123#261261&p8p6992");
             var entity = dataSource.getTvShowById(id);
 
-         //   System.Diagnostics.Debug.WriteLine("HELLO2");
-         //   System.Diagnostics.Debug.WriteLine(entity.imageOriginal);
-
             ViewData["entity"] = entity;
+            return View();
+
+        }
+
+        public IActionResult Search(string searchString)
+        {
+            TvShowRepository dataSource = new TvShowDataSource("EpisodieAndroidClient", "123#261261&p8p6992");
+            if (String.IsNullOrEmpty(searchString))
+                searchString = null;
+            else
+            {
+                var movies = dataSource.searchTvShowByQuery(searchString);
+                ViewData["movies"] = movies;
+            }
             return View();
 
         }

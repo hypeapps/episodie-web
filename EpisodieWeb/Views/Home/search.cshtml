@@ -1,0 +1,47 @@
+﻿@using EpisodieWeb.Models.api
+@using EpisodieWeb.Models.Api
+@{
+    ViewData["Title"] = "Search";
+}
+
+@{
+    var movies = (List<TvShowEntity>)ViewData["movies"];
+}
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+        <div class="form-group">
+            @using (Html.BeginForm(FormMethod.Get))
+            {
+                <span style="color:black;">
+                    @Html.TextBox("searchString", null, new { @class = "form-control", placeholder = "Find a movie you like!" })
+                </span>
+                <input type="submit" style="margin-top:10px;" value="Search" class="btn btn-warning" />
+            }
+        </div>
+    </div>
+</div>
+
+ @if (movies != null) { 
+
+
+<div class="row">
+    @if (movies.Count <= 1) 
+    {
+    <h1 class="display-4" style="text-align:center">No results, sorry. Maybe next time try not to search porn movie!</h1>
+    }
+    else
+    {
+    <div class="col">
+        @for (var i = 0; i < movies.Count; i++)
+        {
+
+            <a href="@Url.Action("detail", "home", new { id = movies[i].tvShowApiId }, null)">
+                <img src="@movies[i].imageOriginal" width="170" height="250" style="padding-right:20px;"/>
+            </a>
+
+        }
+    </div>
+    }
+</div>
+ } 
