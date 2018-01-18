@@ -1,0 +1,23 @@
+﻿@using EpisodieWeb.Models.api
+
+@{
+    ViewData["Title"] = "Movie details";
+}
+
+@{
+    var lastReleases = (TvShowExtendedEntity)ViewData["entity"];
+}
+
+
+<div class="row">
+    <div class="col-md-3 col-md-offset-2">
+        <img src="@lastReleases.imageMedium"  style="padding-top:25px;"/>
+        <p style="margin-bottom:2px">@lastReleases.network</p>
+        <a href="@lastReleases.officialSite"><p>Strona produkcji</p></a>
+    </div>
+    <div class="col-md-5" >
+        <h3>@lastReleases.name</h3>
+        <p><i>@lastReleases.genre</i></p>
+        <p>@lastReleases.summary</p>
+    </div>
+</div>
