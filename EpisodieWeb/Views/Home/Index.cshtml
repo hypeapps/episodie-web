@@ -4,7 +4,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-
 @{
     var mostPopular = (Pageable<TvShowEntity>)ViewData["mostPopular"];
 }
@@ -16,81 +15,75 @@
 @{
     var lastReleases = (Pageable<TvShowPremiere>)ViewData["lastReleases"];
 }
-
-<style>
-    .slick-prev:before, .slick-next:before {
-        color: lightgray;
-    }
-    .row {
-    margin-top: 15px;
-    }
-    .inner-box {
-    width:175px;
-    }
-
-</style>
-
-
+<div class="overlay-gradient">
+    &nbsp;
+</div>
 <div class="row">
-    <h1 class="display-4">Most Popular</h1>
+    <div class="row-header">
+        <h1>Most Popular</h1>
+    </div>
+    <div style="clear:both"></div>
     <div class="col">
         @for (var i = 0; i < mostPopular.totalElements; i++)
         {
             <div class="inner-box">
-                <a href="@Url.Action("detail", "home", new { id=mostPopular.content[i].tvShowApiId }, null)">
-                    <img src="@mostPopular.content[i].imageOriginal" width="130" height="200" /> 
+                <a class="hvr-float hvr-grow" href="@Url.Action("detail", "home", new { id=mostPopular.content[i].tvShowApiId }, null)">
+                    <img src="@mostPopular.content[i].imageMedium" />
                 </a>
-</div>
+                <div class="mirror">
+                    <div class="mirror-overlay">&nbsp;</div>
+                    <img src="@mostPopular.content[i].imageMedium" />
+                </div>
+            </div>
         }
     </div>
 </div>
 
 <div class="row">
-    <h1 class="display-4">Top List</h1>
-    <div class="col">
-        @for (var i = 0; i < topList.totalElements; i++)
+    <div class="row-header">
+        <h1>Top 100</h1>
+    </div>
+    <div style="clear:both"></div>
+    <div class="col top-list">
+        @for (var i = 0; i <= 99; i++)
         {
-        <div class="inner-box">
-            <a href="@Url.Action("detail", "home", new { id=topList.content[i].tvShowApiId }, null)">
-                <img src="@topList.content[i].imageOriginal" width="130" height="200" />
-            </a>
-        </div>
+            <div class="inner-box">
+                <a class="hvr-float hvr-grow" href="@Url.Action("detail", "home", new { id = topList.content[i].tvShowApiId }, null)">
+                    <img src="@topList.content[i].imageMedium" />
+                    <div class="toplist-number">
+                        <span>@(i + 1)</span>
+                    </div>
+                </a>
+                <div class="mirror">
+                    <div class="mirror-overlay">&nbsp;</div>
+                    <img src="@topList.content[i].imageMedium" />
+                </div>
+            </div>
         }
     </div>
 </div>
 
 <div class="row">
-    <h1 class="display-4">Latest Releases</h1>
+    <div class="row-header">
+        <h1>Latest Relases</h1>
+    </div>
+    <div style="clear:both"></div>
     <div class="col">
         @for (var i = 0; i < lastReleases.totalElements; i++)
         {
-        <div class="inner-box">
-            <a href="@Url.Action("detail", "home", new { id=lastReleases.content[i].tvShowApiId }, null)">
-                <img src="@lastReleases.content[i].imageOriginal" width="130" height="200"/>
+            <div class="inner-box">
+                <a class="hvr-float hvr-grow" href="@Url.Action("detail", "home", new { id=lastReleases.content[i].tvShowApiId }, null)">
+                    <img src="@lastReleases.content[i].imageMedium" />
                 </a>
-        </div>
+                <div class="mirror">
+                    <div class="mirror-overlay">&nbsp;</div>
+                    <img src="@lastReleases.content[i].imageMedium" />
+                </div>
+            </div>
         }
     </div>
 </div>
 <br />
-
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="http://cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js"></script>
-<script type="text/javascript">
-    $('.col').slick({
-        centerMode: false,
-        centerPadding: '60px',
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        autoplay: false,
-        draggable: true,
-        swipe: true,
-        swipeToSlide: true,
-        variableWidth: true,
-        infinite: true,
-        arrows: true
-    });
-
-</script>
+<a href="@Url.Action("search", "home")" class="fab-search hvr-grow">
+    <img src="~/images/ic_search_black_24px.svg" width="30" height="30"/>
+</a>

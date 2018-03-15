@@ -1,11 +1,8 @@
-﻿using EpisodieWeb.Models.api;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace EpisodieWeb.Models.Api
 {
+    // Klasa generyczna opakowująca logikę paginacji.
     public class Pageable<T>
     {
         public List<T> content { get; set; }

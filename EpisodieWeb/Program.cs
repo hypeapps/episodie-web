@@ -12,9 +12,10 @@ namespace EpisodieWeb
 {
     public class Program
     {
-        public static string EPISODIE_API_USERNAME = "YOUR API USERNAME";
-
-        public static string EPISODIE_API_PASSWORD = "YOUR API PASSWORD";
+        // Nazwa użytkownika episodie api
+        public static string EPISODIE_API_USERNAME = "YOUR USERNAME";
+        // Hasło użytkownika episodie api
+        public static string EPISODIE_API_PASSWORD = "YOUR PASSWORD";
 
         public static void Main(string[] args)
         {

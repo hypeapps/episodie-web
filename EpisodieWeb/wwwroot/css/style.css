@@ -1,0 +1,295 @@
+﻿@font-face {
+    font-family: 'coolveticaregular';
+    src: url('../fonts/coolvetica-webfont.eot');
+    src: url('../fonts/coolvetica-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/coolvetica-webfont.woff2') format('woff2'), url('../fonts/coolvetica-webfont.woff') format('woff'), url('../fonts/coolvetica-webfont.svg#coolveticaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'coolveticaregular', sans-serif;
+    background: black;  
+    overflow-x: hidden;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+footer {
+    height: 10px !important;
+}
+
+.more-padding {
+    padding: 15px 15px;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: lightgray;
+}
+
+.row h1 {
+    color: white;
+    font-size: 25px;
+    padding-left: 15px;
+    padding-bottom: 15px
+}
+
+nav {
+    z-index: 9999;
+}
+
+nav a {
+    float: left;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    margin-top: 15px;
+}
+
+nav a h2 {
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+nav a img {
+    float: left;
+    width: 65px;
+}
+
+.overlay-gradient {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left 0;
+    z-index: 9998;
+    pointer-events: none;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 78%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.65) 94%, rgba(0,0,0,0.65) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 78%,rgba(0,0,0,0) 90%,rgba(0,0,0,0.65) 94%,rgba(0,0,0,0.65) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 78%,rgba(0,0,0,0) 90%,rgba(0,0,0,0.65) 94%,rgba(0,0,0,0.65) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+}
+
+.fab-search {
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+    z-index: 9999;
+    border-radius: 50%;
+    width: 55px;
+    background: white;
+    height: 55px;
+}
+
+.fab-search img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.container-fluid {
+    max-width: 98%;
+}
+
+.col img {
+    height: 180px !important;
+    width: auto;
+}
+
+.slick-slide {
+    width: 180px;
+    padding: 0 30px;
+}
+
+.separator-line {
+    width: 100%;
+    height: 2px;
+    background: goldenrod;
+}
+
+.slick-prev {
+    left: 0;
+    z-index: 9999;
+}
+
+.slick-next {
+    right: 0;
+    z-index: 9999;
+}
+
+.slick-slide a {
+    position: relative;
+    width: 120px;
+    overflow: hidden;
+    float: left;
+    -webkit-box-shadow: 0px 0px 21px -5px rgba(255,255,255,0.65);
+    -moz-box-shadow: 0px 0px 21px -5px rgba(255,255,255,0.65);
+    box-shadow: 0px 0px 21px -5px rgba(255,255,255,0.65);
+    margin: 30px 0;
+    margin-bottom: 40px;
+}
+
+.slick-slide .mirror {
+    position: absolute;
+    bottom: 0px;
+    width: 120px;
+    height: 40px;
+}
+
+.slick-slide .mirror img {
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipY;
+    -ms-filter: "FlipY";
+    width: 100%;
+    opacity: 0.5;
+}
+
+.slick-slide .mirror .mirror-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 21%, rgba(0,0,0,1) 95%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 21%,rgba(0,0,0,1) 95%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 21%,rgba(0,0,0,1) 95%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+    z-index: 9999;
+}
+
+.row-header {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+.row-header h1 {
+    float: left;
+    position: relative;
+    margin-bottom: 0;
+}
+
+    .row-header h1:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -100vw;
+        margin-right: -15px;
+        margin-top: 12px;
+        height: 1.5px;
+        width: 100vw;
+        opacity: 0.5;
+        background: -moz-linear-gradient(left, rgba(66,134,244,1) 0%, rgba(125,185,232,0) 100%);
+        background: -moz-linear-gradient(left, rgba(66,134,244,1) 0%, rgba(125,185,232,0.61) 22%, rgba(125,185,232,0) 57%);
+        background: -webkit-linear-gradient(left, rgba(66,134,244,1) 0%,rgba(125,185,232,0.61) 22%,rgba(125,185,232,0) 57%);
+        background: linear-gradient(to right, rgba(66,134,244,1) 0%,rgba(125,185,232,0.61) 22%,rgba(125,185,232,0) 57%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4286f4', endColorstr='#007db9e8',GradientType=1 );
+    }
+
+.slick-track {
+    margin-left: 9px;
+}
+
+.toplist-number {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+    top: 0;
+    color: white;
+    text-decoration: none;
+    border-top: 40px solid rgba(0, 121, 234, 0.7);
+    border-right: 40px solid transparent;
+}
+
+.toplist-number span {
+    position: absolute;
+    text-align: center;
+    left: 5px;
+    top: -37px;
+}
+
+.background-image {
+    background-size: cover !important;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.details-card {
+    width: 120%;
+    position: absolute;
+    top: 30vh;
+    left: -10%;
+    background: rgba(0,0,0,0.6);
+    min-height: calc(70vh - 102px);
+    padding: 0 10%;
+    color: #fff;
+}
+
+.image-pull-up {
+    margin-top: -150px;
+}
+
+.image-pull-up img {
+    width: 100%;
+}
+
+.details-header h3 {
+    font-size: 46px;
+    margin-top: -60px;
+    margin-bottom: 30px;
+}
+
+.details-header p {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.details-info a {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    margin-top:  15px;
+    font-size: 18px;
+    float: left;
+    width: 100%;
+    transition: 0.4s ease;
+}
+
+.details-info a:hover {
+    color: rgba(66,134,244,1);
+}
+
+.details-info p.details-network {
+    font-size: 14px;
+    background: rgba(66,134,244,1);
+    border-radius: 3px;
+    float: left;
+    padding: 3px 5px;
+    line-height: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: -5px;
+}

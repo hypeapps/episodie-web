@@ -1,12 +1,10 @@
 ﻿using EpisodieWeb.Models.api;
 using EpisodieWeb.Models.Api;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EpisodieWeb.Controllers
 {
+    // Wzorzec repozytorium definujący zasoby warstwy dostępu do danych.
     interface TvShowRepository
     {
         Pageable<TvShowEntity> getMostPopular(int page, int size);

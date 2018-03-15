@@ -7,7 +7,6 @@
 @{
     var movies = (List<TvShowEntity>)ViewData["movies"];
 }
-
 <div class="row">
     <div class="col-md-6 col-md-offset-3 text-center">
         <div class="form-group">
@@ -16,32 +15,36 @@
                 <span style="color:black;">
                     @Html.TextBox("searchString", null, new { @class = "form-control", placeholder = "Find a movie you like!" })
                 </span>
-                <input type="submit" style="margin-top:10px;" value="Search" class="btn btn-warning" />
+                <input type="submit" style="margin-top:10px; background:  rgba(66,134,244,1); border: none" value="Search" class="btn btn-warning" />
             }
         </div>
     </div>
 </div>
 
- @if (movies != null) { 
-
-
-<div class="row">
-    @if (movies.Count <= 1) 
-    {
-    <h1 class="display-4" style="text-align:center">No results, sorry. Maybe next time try not to search porn movie!</h1>
-    }
-    else
-    {
-    <div class="col">
-        @for (var i = 0; i < movies.Count; i++)
+@if (movies != null)
+{
+    <div class="row">
+        @if (movies.Count <= 1)
         {
+            <h1 class="display-4" style="text-align:center">No results, sorry.</h1>
+        }
+        else
+        {
+            <div class="col">
+                @for (var i = 0; i < movies.Count; i++)
+                {
+                <div class="inner-box">
+                    <a class="hvr-float hvr-grow" href="@Url.Action("detail", "home", new { id = movies[i].tvShowApiId }, null)">
+                        <img src="@movies[i].imageMedium"/>
+                    </a>
+                    <div class="mirror">
+                        <div class="mirror-overlay">&nbsp;</div>
+                        <img src="@movies[i].imageMedium" />
+                    </div>
+                </div>
 
-            <a href="@Url.Action("detail", "home", new { id = movies[i].tvShowApiId }, null)">
-                <img src="@movies[i].imageOriginal" width="170" height="250" style="padding-right:20px;"/>
-            </a>
-
+                }
+            </div>
         }
     </div>
-    }
-</div>
- } 
+}

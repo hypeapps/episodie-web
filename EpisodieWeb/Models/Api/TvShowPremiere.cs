@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EpisodieWeb.Models.Api
 {
+    // Obiekt reprezentujący model JSON dla premiery serialu. 
     public class TvShowPremiere
     {
-
         public String tvShowApiId { get; set; }
 
         public String imdbId { get; set; }
@@ -15,7 +12,7 @@ namespace EpisodieWeb.Models.Api
         public String name { get; set; }
 
         public String officialSite { get; set; }
-
+        // Emitowane na kanale.
         public String network { get; set; }
 
         public String genre { get; set; }

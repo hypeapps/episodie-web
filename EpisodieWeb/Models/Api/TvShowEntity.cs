@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EpisodieWeb.Models.api
 {
+    // Obiekt reprezentujący model JSON dla serialu zawierający podstawowe informacje.
     public class TvShowEntity
     {
         public int tvShowApiId { get; set; }
